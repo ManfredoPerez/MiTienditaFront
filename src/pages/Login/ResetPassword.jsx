@@ -4,6 +4,7 @@ import * as yup from "yup";
 import api from "../../services/api"
 import { useParams, useNavigate } from "react-router-dom";
 import "../../styles/auth.css";
+import toast from "react-hot-toast";
 
 const schema = yup.object({
   contrasena: yup.string().min(6, "La contraseña debe tener al menos 6 caracteres").required("Contraseña requerida"),
@@ -19,10 +20,10 @@ const ResetPassword = () => {
   const onSubmit = async (data) => {
     try {
       await api.post(`/auth/reset-password/${token}`, data);
-      alert("Contraseña restablecida correctamente.");
+      toast.success("Contraseña restablecida correctamente.");
       navigate("/");
     } catch (err) {
-      alert("Error al restablecer la contraseña.");
+      toast.error("Error al restablecer la contraseña.");
       console.error(err);
     }
   };

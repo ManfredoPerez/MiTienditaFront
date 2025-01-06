@@ -22,6 +22,7 @@ import {
   InputLabel,
   CircularProgress,
 } from "@mui/material";
+import toast from "react-hot-toast";
 
 const CategoryManagement = () => {
   const [categories, setCategories] = useState([]);
@@ -66,11 +67,11 @@ const CategoryManagement = () => {
 
     try {
       await api.post("/categorias", categoryData);
-      alert("Categoría agregada correctamente");
+      toast.success("Categoría agregada correctamente");
       fetchCategories();
       handleCloseModal();
     } catch (err) {
-      alert("Error al agregar categoría");
+      toast.error("Error al agregar categoría");
       console.error(err);
     }
   };
@@ -85,11 +86,11 @@ const CategoryManagement = () => {
 
     try {
       await api.put(`/categorias/${currentCategory.id}`, categoryData);
-      alert("Categoría actualizada correctamente");
+      toast.success("Categoría actualizada correctamente");
       fetchCategories();
       handleCloseModal();
     } catch (err) {
-      alert("Error al actualizar categoría");
+      toast.error("Error al actualizar categoría");
       console.error(err);
     }
   };
@@ -98,10 +99,10 @@ const CategoryManagement = () => {
     if (window.confirm("¿Estás seguro de que deseas eliminar esta categoría?")) {
       try {
         await api.delete(`/categorias/${categoryId}`);
-        alert("Categoría eliminada correctamente");
+        toast.success("Categoría eliminada correctamente");
         fetchCategories();
       } catch (err) {
-        alert("Error al eliminar categoría");
+        toast.error("Error al eliminar categoría");
         console.error(err);
       }
     }

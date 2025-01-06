@@ -15,6 +15,7 @@ import {
   InputAdornment,
   Box,
 } from "@mui/material";
+import toast from "react-hot-toast";
 
 const schema = yup.object({
   codigo: yup.string().required("Código requerido"),
@@ -99,7 +100,7 @@ const AddProductPage = ({ onSubmit, defaultValues }) => {
       });
 
       if (response.status === 200 || response.status === 201) {
-        alert("Producto guardado correctamente");
+        toast.success("Producto guardado correctamente");
         reset();
         setImage(null);
         setPreviewUrl(null);

@@ -37,7 +37,6 @@ const Cart = () => {
 
       
       toast.success("Compra confirmada.");
-      // alert("Compra confirmada");
       setCart([]);
       localStorage.removeItem("cart");
       window.dispatchEvent(new Event("storage")); // Sincroniza con otros componentes
@@ -50,7 +49,6 @@ const Cart = () => {
   const cancelPurchase = () => {
     setCart([]);
     localStorage.removeItem("cart");
-    // alert("Compra cancelada");
     window.dispatchEvent(new Event("storage")); // Sincroniza con otros componentes
     toast.success("Compra Cancelada.");
   };

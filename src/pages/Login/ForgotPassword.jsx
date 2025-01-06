@@ -4,6 +4,7 @@ import * as yup from "yup";
 import api from "../../services/api";
 import { useNavigate } from "react-router-dom";
 import "../../styles/auth.css";
+import toast from "react-hot-toast";
 
 const schema = yup.object({
   correo: yup.string().email("Correo inválido").required("Correo requerido"),
@@ -18,10 +19,10 @@ const ForgotPassword = () => {
   const onSubmit = async (data) => {
     try {
       await api.post("/auth/recuperar", data);
-      alert("Correo de recuperación enviado. Revisa tu bandeja de entrada.");
+      toast.success("Correo de recuperación enviado. Revisa tu bandeja de entrada.");
       navigate("/");
     } catch (err) {
-      alert("Error al enviar el correo de recuperación.");
+      toast.error("Error al enviar el correo de recuperación.");
       console.error(err);
     }
   };

@@ -25,6 +25,7 @@ import {
   Box,
 } from "@mui/material";
 import { Edit, Delete, PersonAdd } from "@mui/icons-material";
+import toast from "react-hot-toast";
 
 const UserManagement = () => {
   const [users, setUsers] = useState([]);
@@ -80,10 +81,10 @@ const UserManagement = () => {
     if (window.confirm("¿Estás seguro de que deseas eliminar este usuario?")) {
       try {
         await api.delete(`/usuarios/${userId}`);
-        alert("Usuario eliminado correctamente");
+        toast.success("Usuario eliminado correctamente");
         fetchUsers();
       } catch (err) {
-        alert("Error al eliminar el usuario");
+        toast.error("Error al eliminar el usuario");
         console.error(err);
       }
     }
@@ -108,11 +109,11 @@ const UserManagement = () => {
         rol_id: currentUser.rol_id,
         estado_id: currentUser.estado_id,
       });
-      alert("Usuario actualizado correctamente");
+      toast.success("Usuario actualizado correctamente");
       handleCloseModal();
       fetchUsers();
     } catch (err) {
-      alert("Error al actualizar el usuario");
+      toast.error("Error al actualizar el usuario");
       console.error(err);
     }
   };
@@ -137,11 +138,11 @@ const UserManagement = () => {
   const handleAddUser = async () => {
     try {
       await api.post("/usuarios", newUser);
-      alert("Usuario agregado correctamente");
+      toast.success("Usuario agregado correctamente");
       handleCloseAddModal();
       fetchUsers();
     } catch (err) {
-      alert("Error al agregar el usuario");
+      toast.error("Error al agregar el usuario");
       console.error(err);
     }
   };

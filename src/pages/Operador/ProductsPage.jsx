@@ -27,6 +27,7 @@ import {
   InputAdornment,
 } from "@mui/material";
 import api from "../../services/api";
+import toast from "react-hot-toast";
 
 const ProductsPage = () => {
   const [products, setProducts] = useState([]);
@@ -90,10 +91,10 @@ const ProductsPage = () => {
     if (window.confirm("¿Estás seguro de que deseas eliminar este producto?")) {
       try {
         await api.delete(`/productos/${id}`);
-        alert("Producto eliminado correctamente");
+        toast.success("Producto eliminado correctamente");
         fetchProducts();
       } catch (err) {
-        alert("Error al eliminar el producto");
+        toast.error("Error al eliminar el producto");
         console.error(err);
       }
     }
@@ -127,12 +128,12 @@ const ProductsPage = () => {
     try {
       const response = await api.put(`/productos/${currentProduct.id}`, data); // Enviar FormData
       console.log("Respuesta de la actualización: ", response.data); // Verificar la respuesta
-      alert("Producto actualizado correctamente");
+      toast.success("Producto actualizado correctamente");
       fetchProducts();
       handleCloseModal();
     } catch (err) {
       console.error("Error al actualizar producto: ", err.response ? err.response.data : err.message);
-      alert("Error al actualizar producto");
+      toast.error("Error al actualizar producto");
     }
   };
 

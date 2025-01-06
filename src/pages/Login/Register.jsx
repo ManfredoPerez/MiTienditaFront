@@ -28,8 +28,6 @@ const Register = () => {
       estado_id: 1,   // estado_id 1 para Activo
     };
   
-    console.log("Datos enviados:", userData);
-  
     try {
       const response = await api.post("/usuarios", userData);
       toast.success("Usuario registrado exitosamente!");
