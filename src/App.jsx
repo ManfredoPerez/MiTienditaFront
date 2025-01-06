@@ -38,12 +38,6 @@ function App() {
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password/:token" element={<ResetPassword />} />
         <Route element={<ProtectedRoute />}>
-          {/* <Route path="/home-client" element={<HomeClient />} />
-          <Route path="/home-operator" element={<HomeOperator />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/order-history" element={<OrderHistory />} />
-          <Route path="/orders" element={<OrdersList />} />
-          <Route path="/products" element={<ProductForm />} /> */}
           <Route path="/home-client" element={<HomeClient />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/order-history" element={<OrderHistory />} />
