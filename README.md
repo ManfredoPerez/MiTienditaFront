@@ -2,8 +2,15 @@
 
 Realizado con React JS (con Vite).
 
+LOGIN
+![image_alt](https://github.com/ManfredoPerez/MiTienditaFront/blob/main/src/img/Login.png?raw=true)
+
+ADMIN
+![image_alt](https://github.com/ManfredoPerez/MiTienditaFront/blob/main/src/img/Admin.png?raw=true)
 
 
+USER
+![image_alt](https://github.com/ManfredoPerez/MiTienditaFront/blob/main/src/img/User.png?raw=true)
 
 # React + Vite
 
