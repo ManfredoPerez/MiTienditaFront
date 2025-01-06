@@ -1,0 +1,179 @@
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+    padding: 1rem;
+  }
+  
+  .auth-card {
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  .auth-left {
+    flex: 1;
+    background-image: url('https://www.likecreative.cl/wp-content/uploads/2020/07/Embudo-de-venta.gif');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 3rem 2rem;
+    position: relative;
+    min-height: 600px;
+  }
+  
+  .auth-left::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+  }
+  
+  .auth-left-content {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .aut-left-title {
+    flex: 1;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .auth-left-content h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .auth-right {
+    flex: 1;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+  }
+  
+  .auth-form-container {
+    width: 100%;
+    max-width: 320px;
+  }
+  
+  .auth-logo {
+    width: 300px;
+    /* height: 48px; */
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-control {
+    background-color: #f8f9fa;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .form-control:focus {
+    border-color: #82c91e;
+    box-shadow: 0 0 0 2px rgba(130, 201, 30, 0.1);
+  }
+  
+  .btn-auth {
+    background-color: #82c91e;
+    border: none;
+    padding: 0.75rem;
+    color: white;
+    width: 100%;
+    border-radius: 8px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  .btn-auth:hover {
+    background-color: #74b816;
+  }
+  
+  .auth-link {
+    color: #82c91e;
+    text-decoration: none;
+  }
+  
+  .auth-link:hover {
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 768px) {
+    .auth-card {
+      flex-direction: column;
+    }
+    
+    .auth-left {
+      min-height: 300px;
+    }
+  }
+  
+
+  /* Recuperar contraseña */
+  .auth-container-recuperar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f2f5;
+  }
+  
+  .auth-card-recuperar {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .auth-form-container {
+    text-align: center;
+  }
+  
+  .btn-auth {
+    width: 100%;
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .btn-auth:hover {
+    background-color: #0056b3;
+  }
+  
+  .auth-link {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .auth-link:hover {
+    text-decoration: underline;
+  }
+  
+  
