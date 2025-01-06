@@ -19,7 +19,8 @@
   
   .auth-left {
     flex: 1;
-    background-image: url('https://www.likecreative.cl/wp-content/uploads/2020/07/Embudo-de-venta.gif');
+    /* background-image: url('https://www.likecreative.cl/wp-content/uploads/2020/07/Embudo-de-venta.gif'); */
+    background-image: url('https://inforgala.com/wp-content/uploads/2022/01/87413-online-shopping.gif');
     background-size: cover;
     background-position: center;
     color: white;
